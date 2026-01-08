@@ -1,0 +1,236 @@
+/* Payslip Page Styles - Theme Support */
+.payslips-page {
+  padding: 2rem;
+  background: var(--bg-secondary);
+  min-height: 100vh;
+}
+
+.payslips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.payslip-card {
+  background: var(--bg-primary, white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md, 0 2px 8px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s;
+  border-left: 4px solid var(--primary-color, #667eea);
+  border: 1px solid var(--border-color, transparent);
+}
+
+.payslip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+}
+
+.payslip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.payslip-header h3 {
+  margin: 0 0 0.25rem 0;
+  color: var(--text-primary, #2d3748);
+  font-size: 1.2rem;
+}
+
+.payslip-header p {
+  margin: 0;
+  color: var(--text-secondary, #718096);
+  font-size: 0.875rem;
+}
+
+.payslip-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.summary-item .label {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #718096);
+  font-weight: 500;
+}
+
+.summary-item .value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #2d3748);
+}
+
+.summary-item .value.primary {
+  color: var(--primary-color, #667eea);
+}
+
+.payslip-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.payslip-actions button {
+  flex: 1;
+}
+
+/* Payslip Modal */
+.payslip-modal {
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.payslip-content {
+  padding: 2rem;
+}
+
+.payslip-company-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #667eea;
+}
+
+.payslip-company-header h1 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary, #2d3748);
+  font-size: 2rem;
+}
+
+.payslip-company-header p {
+  margin: 0;
+  color: var(--text-secondary, #718096);
+}
+
+.payslip-employee-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-tertiary, #f8fafc);
+  border-radius: 8px;
+}
+
+.payslip-employee-info strong {
+  color: var(--text-primary, #2d3748);
+}
+
+.payslip-breakdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.breakdown-section h3 {
+  margin: 0 0 1rem 0;
+  color: var(--text-primary, #2d3748);
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color, #e2e8f0);
+}
+
+.breakdown-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.breakdown-section td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  color: var(--text-primary);
+}
+
+.breakdown-section td:first-child {
+  color: var(--text-secondary, #4a5568);
+}
+
+.breakdown-section td:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: var(--text-primary, #2d3748);
+}
+
+.breakdown-section .total-row {
+  border-top: 2px solid #2d3748;
+  border-bottom: 3px double #2d3748;
+}
+
+.breakdown-section .total-row td {
+  padding-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.payslip-net-salary {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.payslip-net-salary h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.payslip-net-salary h2 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* Print Styles */
+@media print {
+  .dashboard-content,
+  .header,
+  .modal-actions,
+  .payslip-actions {
+    display: none !important;
+  }
+  
+  .modal {
+    position: static;
+    max-width: 100%;
+    box-shadow: none;
+  }
+  
+  .payslip-modal {
+    max-height: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .payslips-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .payslip-breakdown {
+    grid-template-columns: 1fr;
+  }
+  
+  .payslip-employee-info {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .payslip-net-salary h2 {
+    font-size: 2rem;
+  }
+}

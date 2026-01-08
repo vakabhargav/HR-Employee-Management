@@ -1,0 +1,157 @@
+/* Attendance Tracker Theme Support */
+.attendance-page {
+  padding: 2rem;
+  background: var(--bg-secondary);
+  min-height: 100vh;
+}
+
+.current-time {
+  color: var(--text-secondary, #666);
+  font-size: 1.1rem;
+}
+
+.attendance-controls {
+  margin-bottom: 2rem;
+}
+
+.attendance-card {
+  background: var(--bg-primary, white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-md, 0 2px 10px rgba(0,0,0,0.1));
+  text-align: center;
+  border: 1px solid var(--border-color, transparent);
+}
+
+.attendance-card h3 {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary, #333);
+}
+
+.attendance-status {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.status-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--text-secondary, #666);
+  font-size: 0.9rem;
+}
+
+.value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-primary, #333);
+}
+
+.attendance-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-checkin {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-checkin:hover:not(:disabled) {
+  background: #218838;
+}
+
+.btn-checkin:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.btn-checkout {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-checkout:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.btn-checkout:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.attendance-history {
+  background: var(--bg-primary, white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-md, 0 2px 10px rgba(0,0,0,0.1));
+  border: 1px solid var(--border-color, transparent);
+}
+
+.attendance-history h3 {
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.history-table {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color, #eee);
+  color: var(--text-primary);
+}
+
+th {
+  background: var(--bg-tertiary, #f8f9fa);
+  font-weight: 600;
+  color: var(--text-primary, #333);
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-badge.present {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.absent {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status-badge.late {
+  background: #fff3cd;
+  color: #856404;
+}

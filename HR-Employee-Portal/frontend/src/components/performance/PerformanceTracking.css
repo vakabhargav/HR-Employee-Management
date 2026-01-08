@@ -1,0 +1,939 @@
+/* ========================================
+   PERFORMANCE TRACKING STYLES
+   Modern, Professional, Attractive Design
+   ======================================== */
+
+@import '../../styles/enhanced-global.css';
+
+.performance-tracking-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.performance-tracking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.performance-header-content h1 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-family: var(--font-heading);
+}
+
+.performance-header-content p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.performance-header-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Performance Overview */
+.performance-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.performance-overview-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-2xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.performance-overview-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.performance-overview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.performance-overview-card:hover::before {
+  opacity: 1;
+}
+
+.performance-rating-display {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 1rem 0;
+  line-height: 1;
+}
+
+.performance-rating-label {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.performance-rating-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Tab Navigation */
+.performance-tab-navigation {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.performance-tab-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-tertiary);
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.performance-tab-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.performance-tab-btn.active {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Goals Section */
+.performance-goals-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.performance-goal-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.performance-goal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.performance-goal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.performance-goal-card:hover::before {
+  opacity: 1;
+}
+
+.performance-goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.performance-goal-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+  font-family: var(--font-heading);
+}
+
+.performance-goal-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.performance-goal-date {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+}
+
+.performance-goal-priority {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+}
+
+.performance-goal-priority.high {
+  background: var(--error-light);
+  color: var(--error-dark);
+}
+
+.performance-goal-priority.medium {
+  background: var(--warning-light);
+  color: var(--warning-dark);
+}
+
+.performance-goal-priority.low {
+  background: var(--info-light);
+  color: var(--info-dark);
+}
+
+.performance-goal-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+.performance-goal-progress {
+  margin-bottom: 1.5rem;
+}
+
+.performance-progress-bar {
+  height: 10px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.performance-progress-fill {
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.performance-progress-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.performance-goal-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.performance-goal-btn {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.performance-goal-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
+}
+
+.performance-goal-btn.primary {
+  background: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+}
+
+.performance-goal-btn.primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.performance-goal-btn.success {
+  background: var(--success);
+  color: var(--white);
+  border-color: var(--success);
+}
+
+.performance-goal-btn.success:hover {
+  background: var(--success-hover);
+  border-color: var(--success-hover);
+}
+
+.performance-goal-btn.warning {
+  background: var(--warning);
+  color: var(--white);
+  border-color: var(--warning);
+}
+
+.performance-goal-btn.warning:hover {
+  background: var(--warning-hover);
+  border-color: var(--warning-hover);
+}
+
+.performance-goal-btn.error {
+  background: var(--error);
+  color: var(--white);
+  border-color: var(--error);
+}
+
+.performance-goal-btn.error:hover {
+  background: var(--error-hover);
+  border-color: var(--error-hover);
+}
+
+/* Reviews Section */
+.performance-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.performance-review-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.performance-review-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.performance-review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.performance-review-card:hover::before {
+  opacity: 1;
+}
+
+.performance-review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.performance-review-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+  font-family: var(--font-heading);
+}
+
+.performance-review-date {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+}
+
+.performance-review-rating {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 1rem 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.performance-review-rating-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.performance-review-comments {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+.performance-review-reviewer {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin: 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* KPIs Section */
+.performance-kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.performance-kpi-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.performance-kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.performance-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.performance-kpi-card:hover::before {
+  opacity: 1;
+}
+
+.performance-kpi-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.performance-kpi-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+  line-height: 1;
+}
+
+.performance-kpi-label {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.performance-kpi-trend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.performance-kpi-trend.up {
+  color: var(--success);
+}
+
+.performance-kpi-trend.down {
+  color: var(--error);
+}
+
+/* Create Goal Modal */
+.performance-goal-modal {
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.performance-modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.performance-modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+}
+
+.performance-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  transition: background var(--transition-fast);
+}
+
+.performance-close-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.performance-modal-content {
+  padding: 1.5rem;
+}
+
+.performance-goal-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.performance-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.performance-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.performance-form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.performance-form-input,
+.performance-form-textarea,
+.performance-form-select {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.performance-form-input:focus,
+.performance-form-textarea:focus,
+.performance-form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+  outline: none;
+}
+
+.performance-form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.performance-form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Dashboard Widgets */
+.performance-dashboard-widgets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.performance-widget-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.performance-widget-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.performance-widget-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.performance-widget-card:hover::before {
+  opacity: 1;
+}
+
+.performance-widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.performance-widget-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  font-family: var(--font-heading);
+}
+
+.performance-widget-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 1rem 0;
+  line-height: 1;
+}
+
+.performance-widget-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.performance-widget-trend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.performance-widget-trend.up {
+  color: var(--success);
+}
+
+.performance-widget-trend.down {
+  color: var(--error);
+}
+
+/* Chart Container */
+.performance-chart-container {
+  height: 300px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  margin: 1.5rem 0;
+}
+
+.performance-chart-placeholder {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.performance-chart-placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Empty State */
+.performance-empty-state {
+  text-align: center;
+  padding: 3rem;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+}
+
+.performance-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.performance-empty-state h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.performance-empty-state p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .performance-tracking-container {
+    padding: 1.5rem;
+  }
+  
+  .performance-overview-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .performance-goals-container {
+    gap: 1rem;
+  }
+  
+  .performance-reviews-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .performance-kpis-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .performance-dashboard-widgets {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .performance-goal-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .performance-tracking-container {
+    padding: 1.5rem;
+  }
+  
+  .performance-tracking-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .performance-header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .performance-tab-navigation {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  
+  .performance-overview-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .performance-rating-display {
+    font-size: 2.5rem;
+  }
+  
+  .performance-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .performance-kpis-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .performance-dashboard-widgets {
+    grid-template-columns: 1fr;
+  }
+  
+  .performance-modal-content {
+    padding: 1rem;
+  }
+  
+  .performance-form-actions {
+    flex-direction: column;
+  }
+  
+  .performance-form-actions .btn-primary,
+  .performance-form-actions .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .performance-tracking-container {
+    padding: 1rem;
+  }
+  
+  .performance-header-content h1 {
+    font-size: 1.75rem;
+  }
+  
+  .performance-header-content p {
+    font-size: 1rem;
+  }
+  
+  .performance-tab-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+  
+  .performance-goal-card,
+  .performance-review-card,
+  .performance-kpi-card {
+    padding: 1rem;
+  }
+  
+  .performance-goal-header h3,
+  .performance-review-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .performance-rating-display,
+  .performance-kpi-value {
+    font-size: 2rem;
+  }
+  
+  .performance-overview-card {
+    padding: 1rem;
+  }
+  
+  .performance-widget-card {
+    padding: 1rem;
+  }
+  
+  .performance-widget-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .performance-tracking-container {
+    padding: 0.75rem;
+  }
+  
+  .performance-header-content h1 {
+    font-size: 1.5rem;
+  }
+  
+  .performance-overview-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .performance-rating-display {
+    font-size: 1.75rem;
+  }
+  
+  .performance-goal-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .performance-goal-meta {
+    flex-wrap: wrap;
+  }
+  
+  .performance-goal-actions {
+    flex-direction: column;
+  }
+  
+  .performance-goal-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .performance-modal-title {
+    font-size: 1.25rem;
+  }
+  
+  .performance-form-group label {
+    font-size: 0.875rem;
+  }
+  
+  .performance-form-input,
+  .performance-form-textarea,
+  .performance-form-select {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
