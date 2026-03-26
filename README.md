@@ -106,15 +106,6 @@ The application follows a client-server architecture:
 
 ---
 
-## 👨‍💻 Contributors
-
-- CH. Nikitha  
-- V. Bhargav  
-- R. Lokesh  
-- U. Dhanujaya  
-
----
-
 ## 📜 License
 
 This project is developed for academic and learning purposes.  
